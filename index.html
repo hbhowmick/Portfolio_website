@@ -3,80 +3,82 @@
 <!--CSS Flexbox Layout Framework -->
 	<head>
 		<meta charset="utf-8">
-		<title>Heather Bhowmick's Portfolio</title>
+		<title>Heather M. Bhowmick</title>
+
+		<!-- Attach Bootstrap 4 CSS -->
+		    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 		<!-- Attach CSS here -->
 		<link rel="stylesheet" href="./css/main.css">
 	</head>
-	<!--Text, lists, 2+ links, 2+ images, 1 form, CSS styles -->
 	<body>
-		<header>
-			<h1>Heather M. Bhowmick</h1>
-			<nav>
-				<ul>
-					<li><a id="active" href="./index.html">Home</a></li>
-					<li><a href="https://www.w3schools.com/html/default.asp">Learn HTML</a></li>
-					<li><a href="https://www.w3schools.com/css/default.asp">Learn CSS</a></li>
-					<li><a href="https://heathercormier.weebly.com/gis-portfolio.html">GIS Portfolio</a></li>
-					<li class="pull-right"><a href="#">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<article class="pull-left">
-				<h2>TITLE HEADING</h2>
-				<h4>Title description, Date</h4>
-				<img src="" alt="Image1">
-				<p>
-					Some text...
-				</p>
-				<h2>TITLE HEADING</h2>
-				<h4>Title description, Date</h4>
-				<img src="" alt="Image1">
-				<p>
-					Some text...
-				</p>
-			</article>
-			<article>
-				<h2>About Me</h2>
-				<img src="images/HeatherBhowmick.jpg" alt="Heather M. Bhowmick" style="float:left;padding:0px 8px 0px 2px;margin:5px;width:160px;">
-				<p align="justify">
-					Heather (Cormier) Bhowmick is a GIS professional,
-					providing technical assistance for projects ranging
-					in scale from the regional level to streetscapes.
-					Heather earned an M.S. in Geographic Information Science
-					for Development and Environment from Clark University
-					and a B.S. in Economics-Finance and Quantitative
-					Perspectives from Bentley University. She also completed
-					a minor in Information Design and Corporate Communication
-					while at Bentley. Using a variety of image processing and
-					mapping software, she conducts spatial and statistical
-					analyses to encourage compact development and natural
-					resource preservation. In addition, she enjoys distilling
-					complex geospatial concepts into straightforward
-					infographics and web applications to effectively engage
-					with and inform the public.
-				</p>
-			</article>
-		</main>
+		<div class="container white-bg">
+			<header>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 center-text">
+							<h1>Heather M. Bhowmick</h1>
+						</div> <!-- ends col 12 -->
+					</div> <!-- ends row -->
+					<div class="row">
+						<div class="col-md-12">
+							<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+		            </button>
+		            <div class="collapse navbar-collapse" id="navbarNav">
+		              <ul class="navbar-nav">
+		                <li class="nav-item active">
+		                  <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
+		                </li>
+		                <li class="nav-item">
+		                  <a class="nav-link" href="./about.html">About</a>
+		                </li>
+		                <li class="nav-item">
+		                  <a class="nav-link" href="./portfolios.html">Portfolios</a>
+		                </li>
+		              </ul>
+		            </div>
+		          </nav>
+						</div> <!-- ends col 12 -->
+					</div> <!-- ends row -->
+				</div> <!-- ends container -->
+			</header>
 
-
-
-<!--
-					<h3>Hobbies</h3>
-					<img src="" alt="Image1">
-					<img src="" alt="Image2">
-					<img src="" alt="Image3">
+			<main>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<p>Main Section</p>
+						</div> <!-- ends col 8 -->
+						<div class="col-md-4">
+							
+						</div> <!-- ends col 4 -->
+					</div>
 				</div>
-				<div class="column_side">
-					<h3>Professional Experience</h3>
-					<p style="color:#A5A5A5;">Feel free to explore my<a href="https://heathercormier.weebly.com/resume.html" target="_blank" style="color:white; font-style:italic; font-weight:bold;"> Resume</a></p>
-	-->
+			</main>
 
-
-		<footer>
-
-		</footer>
-
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse" id="navbarNav"></div>
+									<ul class="navbar-nav">
+										<li class="nav-item">
+											<a class="nav-link" href="./contact.html">Contact</a>
+										</li>
+									</ul>
+							</nav>
+						</div> <!-- ends col 12 -->
+					</div> <!-- ends row -->
+				</div> <!-- ends container -->
+			</footer>
+			<!-- Attach Bootstrap JS -->
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		</div> <!-- ends container -->
 	</body>
 </html>
