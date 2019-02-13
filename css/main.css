@@ -73,6 +73,11 @@ h2 {
   font-size: 40px;
 }
 
+h3 {font-family: Papyrus, fantasy;
+font-weight: bold;
+font-size: 30px;
+}
+
 .row {
   margin-top: 20px;
   display: flex;
