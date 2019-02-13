@@ -4,8 +4,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-size: 15px;
+  /* font-size: 15px; */
   color: #E1E2E5;
+  /* font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; */
 }
 
 .container {
@@ -16,11 +17,13 @@ body {
   margin-bottom: 50px;
   width: 60%;
   height: 100%;
-  overflow: auto;
+  /* overflow: auto; */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 header {
-  font-family: Papyrus, fantasy;
+  /* font-family: Papyrus, fantasy; */
 }
 
 nav {
@@ -30,6 +33,7 @@ nav {
 
 nav a {
   text-transform: uppercase;
+  font-size: 15px;
 }
 
 .row {
@@ -45,14 +49,16 @@ header .row {
   padding: 15px 0px;
 }
 
-main {
+/* main {
   margin: 0px 6.5% 20px 6.5%;
-}
+} */
 
 main .col-md-12 {
+  width: 100%
   margin-left: 15px;
   margin-right: 15px;
-  padding-left: 15px;
+  padding-left: 55px;
+  padding-right: 55px;
 }
 
 div {
@@ -62,20 +68,49 @@ div {
 h1 {
   font-size: 70px;
   font-weight: bold;
+  font-family: Goudy Old Style, serif;
   color: white;
   margin:0px;
-  padding-top: 20px;
+  /* padding-top: 20px; */
+  padding-bottom: 10px;
 }
 
 h2 {
-  font-family: Papyrus, fantasy;
-  font-weight: bold;
-  font-size: 40px;
+  /* font-family: Papyrus, fantasy; */
+  /* font-weight: bold; */
+  font-size: 32px;
+  font-family: Goudy Old Style, serif;
+  margin-top: 8px;
+  margin-bottom: 10px;
 }
 
-h3 {font-family: Papyrus, fantasy;
-font-weight: bold;
-font-size: 30px;
+h3 {
+  /* font-family: Papyrus, fantasy; */
+  font-weight: bold;
+  font-size: 22px;
+  font-family: Goudy Old Style, serif;
+  margin-bottom: 15px;
+}
+
+h5 {
+  font-size: 18px;
+  font-family: Goudy Old Style, serif;
+  margin-bottom: 4px;
+}
+
+p {
+  font-family: Goudy Old Style, serif;
+  font-size: 18px;
+  margin-top: -6px;
+  /* margin-bottom: -4px; */
+}
+
+.no-topmargin {
+  margin-top: -4px;
+}
+
+.extra-toppadding {
+  padding-top: 25px;
 }
 
 .row {
@@ -118,6 +153,15 @@ a:hover {
   text-align: center;
 }
 
+.justify-text {
+  text-align: justify;
+}
+
 .bold {
   font-weight: bold;
+}
+
+footer {
+  padding-left: 15px;
+  padding-right: 15px;
 }
