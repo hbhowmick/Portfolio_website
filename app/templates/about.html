@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  {{ super() }} - {{ heading }}
+{% endblock %}
+
+
+{% block app_content %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h2 class="center-text bold">About Me</h2>
+            <p>Heather M. (Cormier) Bhowmick is a GIS professional, providing technical assistance for projects ranging in scale from the regional level to streetscapes. Using a variety of image processing and mapping software, she conducts spatial and statistical analyses to encourage compact development and natural resource preservation. In addition, she enjoys distilling complex geospatial concepts into straightforward infographics and web applications to effectively engage with and inform the public.</p>
+            <h2 class="center-text bold extra-toppadding">Education</h2>
+            <h5>Python and Data Science Bootcamp</h5>
+            <small class="no-topmargin"><i>March 2019</i></small>
+            <small class="no-topmargin"><i>Coding Temple - Boston, MA</i></small>
+            <br>
+            <h5>M.S. Geographic Information Science for Development and Environment</h5>
+            <small class="no-topmargin"><i>May 2015</i></small>
+            <small class="no-topmargin"><i>Clark University - Worcester, MA</i></small>
+            <br>
+            <h5>B.S. Economics-Finance and Quantitative Perspectives</h5>
+            <h5 class="no-topmargin">Minor: Information Design and Corporate Communication</h5>
+            <small class="no-topmargin"><i>May 2010</i></small>
+            <small class="no-topmargin"><i>Bentley University - Waltham, MA</i></small>
+          </div> <!-- ends card -->
+        </div><!-- ends col 5 -->
+
+        <div class="col-md-6">
+          <div class="card">
+            <h2 class="center-text bold">Skillset</h2>
+            <h3>Analysis</h3>
+            <p>GIS: <i>ArcMap, ArcPro, ArcGIS Online, IDRISI/TerrSet, ENVI, CLASlite, GeoDa, CityEngine, GeoPlanner</i></p>
+            <p>Statistics: <i>MATLAB, Minitab, R, SPSS</i></p>
+            <br>
+            <h3>Programming</h3>
+            <p>Languages: <i>Python, SQL, JavaScript, HTML5, CSS3</i></p>
+            <p>Frameworks: <i>Bootstrap, Flask, React</i></p>
+            <p>Libraries: <i>jQuery, Pandas, Numpy, Matplotlib, SkLearn</i></p>
+            <br>
+            <h3>Basic Technical</h3>
+            <p><i>Office 365, MS Word, Excel, PowerPoint, Visio, Outlook</i></p>
+          </div> <!-- ends card -->
+        </div><!-- ends col 6 -->
+      </div> <!-- ends row -->
+    </div> <!-- ends col-md-12 -->
+  </div> <!-- ends row -->
+{% endblock %}
