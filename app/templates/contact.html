@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block title %}
+  {{ super() }} - {{ heading }}
+{% endblock %}
+
+
+{% block app_content %}
+  <div class="row">
+    <div class="col-md-12">
+      <!-- starts post section -->
+
+      <!-- starts post form -->
+      <div class="card">
+        {{ wtf.quick_form(form) }}
+      </div>
+      <!-- ends post form -->
+
+      {% for post in contact_info %}
+        <div class="row top-margin-sm">
+          <div class="col-md-12">
+            <div class="card">
+              <p class="card-subtitle">{{ post.date_posted }}</p>
+              <h4>{{ post.name }}</h4>
+              <h5>{{ post.phone }}</h5>
+              <h5>{{ post.email }}</h5>
+              <p>{{ post.msg }}</p>
+            </div>
+          </div> <!-- ends col 12 for post -->
+        </div> <!-- ends row for post -->
+      {% endfor %}
+      <!-- ends post section -->
+    </div> <!-- ends col-md-12 -->
+  </div> <!-- ends row -->
+{% endblock %}

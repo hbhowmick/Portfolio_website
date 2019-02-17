@@ -72,8 +72,12 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav"></div>
                     <ul class="navbar-nav">
+                      {% if title == 'Contact' %}
+                      <li class="nav-item active">
+                      {% else %}
                       <li class="nav-item">
-                        <a class="nav-link" href="./contact.html">Contact</a>
+                      {% endif %}
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
                       </li>
                     </ul>
                 </nav>
