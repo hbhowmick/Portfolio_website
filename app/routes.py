@@ -82,7 +82,7 @@ def register():
     return render_template('register.html', title='Register', form=form, heading=heading)
 
 
-@login_required
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     heading = 'Contact'
