@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block title %}
+  {{ super() }} - {{ heading }}
+{% endblock %}
+
+
+{% block app_content %}
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <br>
+      <h2>Register</h2>
+      <br>
+      {{ wtf.quick_form(form) }}
+      <br>
+      <br>
+    </div> <!-- ends col 4 -->
+  </div> <!-- ends row -->
+{% endblock %}

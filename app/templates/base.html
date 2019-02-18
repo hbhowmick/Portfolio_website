@@ -51,6 +51,27 @@
                     {% endif %}
                     <a class="nav-link" href="{{ url_for('portfolios') }}">Portfolios</a>
                     </li>
+                    {% if current_user.is_authenticated %}
+                      <!-- Logout link here -->
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                      </li>
+                    {% else %}
+                      {% if title == 'Sign in' %}
+                      <li class="nav-item active">
+                      {% else %}
+                      <li class="nav-item">
+                      {% endif %}
+                        <a class="nav-link" href="{{ url_for('login') }}">Sign In</a>
+                      </li>
+                      {% if title == 'Register' %}
+                      <li class="nav-item active">
+                      {% else %}
+                      <li class="nav-item">
+                      {% endif %}
+                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                      </li>
+                    {% endif %}
                   </ul>
                 </div>
               </nav>
@@ -60,8 +81,17 @@
 
         {% block content %}
           <main>
-          <!-- block app content allows us to keep base content that is similar to all files, e.g. a footer -->
-          {% block app_content %}{% endblock %}
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class='messages'>
+                  {% for message in messages %}
+                    <li> {{ message }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+
+            {% block app_content %}{% endblock %}
           </main>
 
           <footer>
