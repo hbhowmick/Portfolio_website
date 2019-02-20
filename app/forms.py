@@ -4,11 +4,15 @@ from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
 from app.models import User
 from flask import flash
 
-class PostForm(FlaskForm):
-    name = StringField('Name: ', validators=[DataRequired()])
+class ContactForm(FlaskForm):
+    name_1 = StringField('Name: ', validators=[DataRequired()])
     phone = StringField('Phone #: ', validators=[DataRequired()])
     email = StringField('E-mail: ', validators=[DataRequired()])
     msg = StringField('Message: ', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+class PostForm(FlaskForm):
+    msg = StringField('Post: ', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 class LoginForm(FlaskForm):

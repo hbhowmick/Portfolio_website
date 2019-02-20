@@ -1,7 +1,7 @@
 from app import app, db
 from flask import render_template, url_for, redirect, flash
-from app.forms import PostForm, LoginForm, RegisterForm
-from app.models import Post, User
+from app.forms import PostForm, LoginForm, RegisterForm, ContactForm
+from app.models import Post, User, Contact
 from flask_login import current_user, login_user, logout_user, login_required
 
 
@@ -22,6 +22,50 @@ def about():
 def portfolios():
     heading = 'Portfolios'
     return render_template('portfolios.html', title='Portfolios', heading=heading)
+
+@login_required
+@app.route('/posts/<username>', methods=['GET', 'POST'])
+def posts(username):
+    heading = 'Posts'
+    form = PostForm()
+
+    # query database for proper person
+    person = User.query.filter_by(username=username).first()
+
+    # when form is submitted, append to posts list, re-render posts page
+    if form.validate_on_submit():
+        msg = form.msg.data
+        post = Post(msg=msg, user_id=current_user.id)
+
+        # add post variable to database stage, then commit
+        db.session.add(post)
+        db.session.commit()
+
+        return redirect(url_for('posts', username=username))
+
+    return render_template('posts.html', title='Posts', form=form, username=username, person=person)
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    heading = 'Contact'
+
+    if form.validate_on_submit():
+        name = form.name_1.data
+        phone = form.phone.data
+        email = form.email.data
+        msg = form.msg.data
+        post = Contact(name_1=name, phone=phone, email=email, msg=msg)
+
+        # add post variable to database stage, then commit
+        db.session.add(post)
+        db.session.commit()
+
+        return redirect(url_for('contact'))
+
+    contact_info = Contact.query.all()
+
+    return render_template('contact.html', title='Contact', form=form, contact_info=contact_info, heading=heading)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -80,30 +124,6 @@ def register():
         return redirect(url_for('login'))
 
     return render_template('register.html', title='Register', form=form, heading=heading)
-
-
-
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-    heading = 'Contact'
-    form = PostForm()
-
-    if form.validate_on_submit():
-        name = form.name.data
-        phone = form.phone.data
-        email = form.email.data
-        msg = form.msg.data
-        post = Post(name=name, phone=phone, email=email, msg=msg)
-
-        # add post variable to database stage, then commit
-        db.session.add(post)
-        db.session.commit()
-
-        return redirect(url_for('contact'))
-
-    contact_info = Post.query.all()
-
-    return render_template('contact.html', title='Contact', form=form, contact_info=contact_info, heading=heading)
 
 
 @app.route('/logout')

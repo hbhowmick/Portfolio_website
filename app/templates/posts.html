@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block title %}
+  {{ super() }} - {{ heading }}
+{% endblock %}
+
+
+{% block app_content %}
+  <div class="row">
+    <!-- starts profile section -->
+    <div class="col-md-3 offset-md-1">
+      <div class="card">
+        <div class="card-img-top">
+          <img src="{{ person.url }}" alt="Profile Image" class="product-img">
+        </div>
+        <div class="card-title">{{ person.first_name }} {{ person.last_nmae }}</div>
+        <div class="card-subtitle">@{{ person.username }}</div>
+        <div class="card-text">
+          <p>Bio here.</p>
+        </div>
+        <button class="btn btn-primary">Connect</button>
+      </div>
+    </div> <!-- ends col 3 -->
+    <!-- ends profile section -->
+
+    <!-- starts msg section -->
+    <div class="col-md-7">
+      <!-- start post form -->
+      {% if current_user.username == username %}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            {{ wtf.quick_form(form) }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <!-- ends post form -->
+
+      {% for post in person.posts %}
+        <div class="row top-margin-sm">
+          <div class="col-md-12">
+            <div class="card">
+              <img src="http://placehold.it/30x30" alt="Profile Image" class="prof_pic">
+              <p class="card-subtitle">{{ post.date_posted.date() }}</p>
+              <p class="card-subtitle">@{{ person.username }}</p>
+              <h4>{{ post.msg }}</h4>
+            </div>
+          </div> <!-- ends col 12 for msg -->
+        </div> <!-- ends row for msg -->
+      {% endfor %}
+    </div> <!-- ends col 8 -->
+    <!-- ends msg section -->
+    
+  </div> <!-- ends row -->
+{% endblock %}
